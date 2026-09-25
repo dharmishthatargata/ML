@@ -25,10 +25,8 @@ export default function Layout() {
 
   return (
     <>
-      {/* NAVBAR */}
       <header className="navbar-header">
         <div className="navbar-container">
-          {/* Logo & Brand */}
           <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
             <div className="logo-icon-wrapper">
               <Shield className="logo-shield" size={24} />
@@ -37,7 +35,6 @@ export default function Layout() {
             <span className="navbar-brand">FraudShield <span className="brand-highlight">AI</span></span>
           </NavLink>
 
-          {/* Desktop Navigation */}
           <nav className="desktop-nav">
             <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
               Home
@@ -53,7 +50,6 @@ export default function Layout() {
             </NavLink>
           </nav>
 
-          {/* Right Controls */}
           <div className="navbar-controls">
             <button 
               className="theme-toggle-btn" 
@@ -73,7 +69,6 @@ export default function Layout() {
               Analyze Claim
             </button>
 
-            {/* Mobile Menu Hamburger */}
             <button 
               className="mobile-hamburger-btn" 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -84,7 +79,6 @@ export default function Layout() {
           </div>
         </div>
 
-        {/* Mobile Navigation Dropdown */}
         <div className={`mobile-nav-menu ${mobileMenuOpen ? 'open' : ''}`}>
           <nav className="mobile-nav-links">
             <NavLink to="/" className={({ isActive }) => isActive ? "mobile-nav-link active" : "mobile-nav-link"} onClick={closeMobileMenu}>
@@ -115,12 +109,10 @@ export default function Layout() {
         </div>
       </header>
 
-      {/* MAIN CONTENT AREA */}
       <main className="main-content">
         <Outlet />
       </main>
 
-      {/* FOOTER */}
       <footer className="footer">
         <div className="footer-container">
           <div className="footer-brand-section">

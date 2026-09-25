@@ -75,9 +75,7 @@ export default function Home() {
 
   return (
     <div className="home-page animate-fade-in">
-      {/* HERO SECTION */}
       <section className="hero-section">
-        {/* Decorative Grid Mesh Background */}
         <div className="hero-grid-overlay"></div>
         
         <div className="hero-container">
@@ -102,7 +100,6 @@ export default function Home() {
               </button>
             </div>
 
-            {/* Live Model Telemetry Dashboard */}
             <div className="telemetry-card">
               <div className="telemetry-header">
                 <div className="pulse-wrapper">
@@ -128,13 +125,11 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Hero Premium Visual Dashboard Showcase */}
           <div className="hero-dashboard-visual">
             <div className="glow-backdrop g-blue"></div>
             <div className="glow-backdrop g-purple"></div>
             
             <div className="dashboard-window-mockup">
-              {/* Window Header */}
               <div className="window-header">
                 <div className="window-dots">
                   <span className="dot red"></span>
@@ -144,10 +139,8 @@ export default function Home() {
                 <span className="window-title">fraudshield-dashboard.ai</span>
               </div>
               
-              {/* Window Content */}
               <div className="window-content">
                 
-                {/* Visual Chart 1: Premium Donut Gauge */}
                 <div className="mini-card mini-donut-card">
                   <div className="mini-card-label">Overall Evaluation Risk</div>
                   <div className="donut-showcase-container">
@@ -186,7 +179,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Visual Chart 2: Live Bar graph */}
                 <div className="mini-card mini-chart-card">
                   <div className="mini-card-label">Anomalies Detected / Day</div>
                   <div className="bar-graph-mock">
@@ -198,7 +190,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Visual Chart 3: Active Document Log */}
                 <div className="mini-card mini-log-card">
                   <div className="mini-card-label font-bold">Latest Analysis Scan</div>
                   <div className="log-row success">
@@ -211,7 +202,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Center Core Scanner Icon */}
                 <div className="dashboard-floating-badge">
                   <div className="badge-shield-wrapper">
                     <Shield size={28} className="shield-icon" />
@@ -225,7 +215,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATISTICS SECTION */}
       <section className="stats-section">
         <div className="container">
           <div className="section-header">
@@ -250,7 +239,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HOW IT WORKS SECTION */}
       <section className="how-it-works-section">
         <div className="container">
           <div className="section-header">
@@ -275,7 +263,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURE CATEGORIES PREVIEW SECTION */}
       <section className="features-preview-section">
         <div className="container">
           <div className="section-header">
@@ -318,7 +305,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FINAL CTA SECTION */}
       <section className="cta-section">
         <div className="cta-container">
           <div className="cta-grid-glow"></div>

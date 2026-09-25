@@ -1,16 +1,13 @@
-/* ================= DESIGN SYSTEM: LIGHT BLUE PALETTE ================= */
 :root {
   --bg-page: #f4f8fc;
   --bg-surface: #ffffff;
   
-  /* Primary Tint Variations */
   --blue-50: #f0f7ff;
   --blue-100: #e0f2fe;
   --blue-200: #bae6fd;
   --blue-500: #0284c7;
   --blue-600: #026aa7;
   
-  /* Soft Accent Tints */
   --tint-indigo: #f0f3ff;
   --tint-indigo-border: #c7d2fe;
   
@@ -27,7 +24,6 @@
   --border-light: #e2e8f0;
   --border-focus: #0284c7;
 
-  /* Shadows */
   --shadow-subtle: 0 2px 8px rgba(2, 132, 199, 0.04);
   --shadow-hover: 0 12px 28px -6px rgba(2, 132, 199, 0.12);
   --shadow-glow: 0 0 20px rgba(2, 132, 199, 0.18);
@@ -51,7 +47,6 @@
   margin: 0 auto;
 }
 
-/* Base Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
@@ -62,7 +57,7 @@
   50% { box-shadow: 0 0 12px rgba(2, 132, 199, 0.25); }
 }
 
-/* Eyebrow Label */
+
 .eyebrow-label {
   display: inline-flex;
   align-items: center;
@@ -106,7 +101,7 @@
   line-height: 1.6;
 }
 
-/* ================= 18. ABOUT — PROJECT STORY ================= */
+
 .story-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-light);
@@ -206,8 +201,6 @@
   background: var(--blue-500);
   color: #ffffff;
 }
-
-/* ================= 19. ABOUT — WHY THIS PROJECT ================= */
 .why-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -261,7 +254,6 @@
   line-height: 1.5;
 }
 
-/* ================= 20. ABOUT — HOW THE SYSTEM WORKS ================= */
 .pipeline-flow-wrapper {
   display: flex;
   align-items: center;
@@ -321,7 +313,6 @@
   transition: color 0.2s, transform 0.2s;
 }
 
-/* ================= 21. ABOUT — MACHINE LEARNING PROCESS ================= */
 .ml-process-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -367,7 +358,6 @@
   line-height: 1.5;
 }
 
-/* ================= 22. ABOUT — MODEL INFORMATION ================= */
 .metrics-dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
@@ -386,7 +376,7 @@
   box-shadow: var(--shadow-hover);
 }
 
-/* Cohesive Pastel Themes */
+
 .bg-light-blue { background: var(--blue-50); border-color: var(--blue-200); }
 .bg-light-indigo { background: var(--tint-indigo); border-color: var(--tint-indigo-border); }
 .bg-light-cyan { background: var(--tint-cyan); border-color: var(--tint-cyan-border); }
@@ -406,7 +396,7 @@
   color: var(--text-muted);
 }
 
-/* ================= 23 & 24. ACCURACY & RESPONSIBLE USE ================= */
+
 .panels-duo-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -465,7 +455,6 @@
   margin: 0;
 }
 
-/* ================= 25. ABOUT — PROJECT FEATURES ================= */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -517,7 +506,7 @@
   line-height: 1.5;
 }
 
-/* Responsive Overrides */
+
 @media (max-width: 900px) {
   .story-card {
     grid-template-columns: 1fr;

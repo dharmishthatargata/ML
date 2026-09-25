@@ -210,7 +210,6 @@ export default function Prediction() {
   return (
     <div className="prediction-page animate-fade-in">
       <div className="container">
-        {/* HEADER */}
         <div className="page-header">
           <h1 className="page-title">Vehicle Insurance Fraud Detection</h1>
           <p className="page-subtitle">
@@ -218,7 +217,6 @@ export default function Prediction() {
           </p>
         </div>
 
-        {/* LOADING SCREEN */}
         {loading && (
           <div className="prediction-loading-overlay">
             <div className="loading-card">
@@ -232,7 +230,6 @@ export default function Prediction() {
           </div>
         )}
 
-        {/* PREDICTION RESULT CARD */}
         {result && (
           <div className={`result-card-section animate-slide-up ${result.isFraud ? 'status-fraud' : 'status-clean'}`}>
             <div className="result-card-header">
@@ -241,7 +238,6 @@ export default function Prediction() {
             </div>
 
             <div className="result-card-content">
-              {/* Circular Ring Gauge */}
               <div className="result-gauge-wrapper">
                 <svg className="result-gauge-svg" viewBox="0 0 120 120">
                   <circle className="gauge-bg" cx="60" cy="60" r="50"></circle>
@@ -262,7 +258,6 @@ export default function Prediction() {
                 </div>
               </div>
 
-              {/* Text Metrics */}
               <div className="result-metrics-details">
                 <div className="result-badge-display">
                   {result.isFraud ? (
@@ -309,18 +304,15 @@ export default function Prediction() {
           </div>
         )}
 
-        {/* INPUT FORM */}
         {!result && (
           <form onSubmit={handleAnalyze} noValidate className="prediction-form-wrapper">
           
-            {/* SECTION 1: DRIVER PROFILE */}
             <fieldset className="form-section">
               <legend>
                 <User size={18} className="legend-icon" />
                 <span>Driver Profile</span>
               </legend>
               <div className="form-fields-grid">
-                {/* Age of Driver */}
                 <div className="form-group">
                   <label htmlFor="ageOfDriver">Age of Driver *</label>
                   <input
@@ -336,7 +328,6 @@ export default function Prediction() {
                   {errors.ageOfDriver && <span className="error-message">{errors.ageOfDriver}</span>}
                 </div>
 
-                {/* Safety Rating */}
                 <div className="form-group">
                   <label htmlFor="safetyRating">Safety Rating (0-100) *</label>
                   <input
@@ -353,7 +344,6 @@ export default function Prediction() {
                   {errors.safetyRating && <span className="error-message">{errors.safetyRating}</span>}
                 </div>
 
-                {/* Annual Income */}
                 <div className="form-group">
                   <label htmlFor="annualIncome">Annual Income ($) *</label>
                   <input
@@ -370,7 +360,6 @@ export default function Prediction() {
                   {errors.annualIncome && <span className="error-message">{errors.annualIncome}</span>}
                 </div>
 
-                {/* Higher Education */}
                 <div className="form-group">
                   <label htmlFor="higherEducation">Higher Education Completed *</label>
                   <select
@@ -387,7 +376,6 @@ export default function Prediction() {
                   {errors.higherEducation && <span className="error-message">{errors.higherEducation}</span>}
                 </div>
 
-                {/* Address Change */}
                 <div className="form-group">
                   <label htmlFor="addressChange">Recent Address Change *</label>
                   <select
@@ -404,7 +392,6 @@ export default function Prediction() {
                   {errors.addressChange && <span className="error-message">{errors.addressChange}</span>}
                 </div>
 
-                {/* Property Status */}
                 <div className="form-group">
                   <label htmlFor="propertyStatus">Property Status *</label>
                   <select
@@ -425,14 +412,12 @@ export default function Prediction() {
               </div>
             </fieldset>
 
-            {/* SECTION 2: CLAIM INFORMATION */}
             <fieldset className="form-section">
               <legend>
                 <FileText size={18} className="legend-icon" />
                 <span>Claim Information</span>
               </legend>
               <div className="form-fields-grid">
-                {/* Claim Date */}
                 <div className="form-group">
                   <label htmlFor="claimDate">Claim Date *</label>
                   <input
@@ -446,7 +431,6 @@ export default function Prediction() {
                   {errors.claimDate && <span className="error-message">{errors.claimDate}</span>}
                 </div>
 
-                {/* Claim Day of Week (Auto-calculated) */}
                 <div className="form-group">
                   <label htmlFor="claimDayOfWeek">Claim Day of Week (Auto)</label>
                   <input
@@ -460,7 +444,6 @@ export default function Prediction() {
                   />
                 </div>
 
-                {/* Accident Site */}
                 <div className="form-group">
                   <label htmlFor="accidentSite">Accident Site *</label>
                   <select
@@ -479,7 +462,6 @@ export default function Prediction() {
                   {errors.accidentSite && <span className="error-message">{errors.accidentSite}</span>}
                 </div>
 
-                {/* Past Number of Claims */}
                 <div className="form-group">
                   <label htmlFor="pastClaims">Past Number of Claims *</label>
                   <input
@@ -495,7 +477,6 @@ export default function Prediction() {
                   {errors.pastClaims && <span className="error-message">{errors.pastClaims}</span>}
                 </div>
 
-                {/* Witness Present */}
                 <div className="form-group">
                   <label htmlFor="witnessPresent">Witness Present *</label>
                   <select
@@ -512,7 +493,6 @@ export default function Prediction() {
                   {errors.witnessPresent && <span className="error-message">{errors.witnessPresent}</span>}
                 </div>
 
-                {/* Liability Percentage */}
                 <div className="form-group">
                   <label htmlFor="liabilityPercent">Liability Percentage (0-100) *</label>
                   <input
@@ -529,7 +509,6 @@ export default function Prediction() {
                   {errors.liabilityPercent && <span className="error-message">{errors.liabilityPercent}</span>}
                 </div>
 
-                {/* Channel */}
                 <div className="form-group">
                   <label htmlFor="channel">Filing Channel *</label>
                   <select
@@ -548,7 +527,6 @@ export default function Prediction() {
                   {errors.channel && <span className="error-message">{errors.channel}</span>}
                 </div>
 
-                {/* Police Report */}
                 <div className="form-group">
                   <label htmlFor="policeReport">Police Report Filed *</label>
                   <select
@@ -567,14 +545,12 @@ export default function Prediction() {
               </div>
             </fieldset>
 
-            {/* SECTION 3: VEHICLE INFORMATION */}
             <fieldset className="form-section">
               <legend>
                 <Car size={18} className="legend-icon" />
                 <span>Vehicle Information</span>
               </legend>
               <div className="form-fields-grid">
-                {/* Age of Vehicle */}
                 <div className="form-group">
                   <label htmlFor="ageOfVehicle">Age of Vehicle (years) *</label>
                   <input
@@ -590,7 +566,6 @@ export default function Prediction() {
                   {errors.ageOfVehicle && <span className="error-message">{errors.ageOfVehicle}</span>}
                 </div>
 
-                {/* Vehicle Category */}
                 <div className="form-group">
                   <label htmlFor="vehicleCategory">Vehicle Category *</label>
                   <select
@@ -609,7 +584,6 @@ export default function Prediction() {
                   {errors.vehicleCategory && <span className="error-message">{errors.vehicleCategory}</span>}
                 </div>
 
-                {/* Vehicle Price */}
                 <div className="form-group">
                   <label htmlFor="vehiclePrice">Vehicle Price ($) *</label>
                   <input
@@ -627,14 +601,12 @@ export default function Prediction() {
               </div>
             </fieldset>
 
-            {/* SECTION 4: FINANCIAL INFORMATION */}
             <fieldset className="form-section">
               <legend>
                 <DollarSign size={18} className="legend-icon" />
                 <span>Financial Information</span>
               </legend>
               <div className="form-fields-grid">
-                {/* Total Claim */}
                 <div className="form-group">
                   <label htmlFor="totalClaim">Total Claim Value ($) *</label>
                   <input
@@ -651,7 +623,6 @@ export default function Prediction() {
                   {errors.totalClaim && <span className="error-message">{errors.totalClaim}</span>}
                 </div>
 
-                {/* Injury Claim */}
                 <div className="form-group">
                   <label htmlFor="injuryClaim">Injury Claim Portion ($) *</label>
                   <input
@@ -668,7 +639,6 @@ export default function Prediction() {
                   {errors.injuryClaim && <span className="error-message">{errors.injuryClaim}</span>}
                 </div>
 
-                {/* Policy Deductible */}
                 <div className="form-group">
                   <label htmlFor="policyDeductible">Policy Deductible ($) *</label>
                   <select
@@ -688,7 +658,6 @@ export default function Prediction() {
                   {errors.policyDeductible && <span className="error-message">{errors.policyDeductible}</span>}
                 </div>
 
-                {/* Annual Premium */}
                 <div className="form-group">
                   <label htmlFor="annualPremium">Annual Premium ($) *</label>
                   <input
@@ -707,14 +676,12 @@ export default function Prediction() {
               </div>
             </fieldset>
 
-            {/* SECTION 5: CLAIM PROCESS */}
             <fieldset className="form-section">
               <legend>
                 <ClipboardList size={18} className="legend-icon" />
                 <span>Claim Process</span>
               </legend>
               <div className="form-fields-grid">
-                {/* Days Open */}
                 <div className="form-group">
                   <label htmlFor="daysOpen">Days Open *</label>
                   <input
@@ -730,7 +697,6 @@ export default function Prediction() {
                   {errors.daysOpen && <span className="error-message">{errors.daysOpen}</span>}
                 </div>
 
-                {/* Form Defects */}
                 <div className="form-group">
                   <label htmlFor="formDefects">Form Defects Counter *</label>
                   <input
@@ -748,7 +714,6 @@ export default function Prediction() {
               </div>
             </fieldset>
 
-            {/* FORM ACTIONS */}
             <div className="form-footer-actions">
               <button type="submit" className="btn-primary form-submit-cta">
                 <Cpu size={18} />

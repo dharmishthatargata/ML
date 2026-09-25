@@ -25,7 +25,6 @@ export default function About() {
     <div className="about-page">
       <div className="about-container">
 
-        {/* ================= 18. ABOUT — PROJECT STORY ================= */}
         <section className="story-card">
           <div className="story-content">
             <span className="eyebrow-label">
@@ -74,7 +73,6 @@ export default function About() {
 
         <hr className="section-divider" />
 
-        {/* ================= 19. ABOUT — WHY THIS PROJECT ================= */}
         <section>
           <div className="section-header-center">
             <span className="eyebrow-label">Project Objectives</span>
@@ -113,7 +111,6 @@ export default function About() {
 
         <hr className="section-divider" />
 
-        {/* ================= 20. ABOUT — HOW THE SYSTEM WORKS ================= */}
         <section>
           <div className="section-header-center">
             <span className="eyebrow-label">System Architecture</span>
@@ -166,7 +163,6 @@ export default function About() {
 
         <hr className="section-divider" />
 
-        {/* ================= 21. ABOUT — MACHINE LEARNING PROCESS ================= */}
         <section>
           <div className="section-header-center">
             <span className="eyebrow-label">Data Pipeline Steps</span>
@@ -221,7 +217,6 @@ export default function About() {
 
         <hr className="section-divider" />
 
-        {/* ================= 22. ABOUT — MODEL INFORMATION ================= */}
         <section>
           <div className="section-header-center">
             <span className="eyebrow-label">Telemetry & Metrics</span>
@@ -269,9 +264,7 @@ export default function About() {
 
         <hr className="section-divider" />
 
-        {/* ================= 23 & 24. ACCURACY & RESPONSIBLE USE ================= */}
         <section className="panels-duo-grid">
-          {/* 23. ACCURACY EXPLANATION */}
           <div className="info-panel-box">
             <div className="panel-icon-circle">
               <Info size={22} />
@@ -286,7 +279,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* 24. RESPONSIBLE USE */}
           <div className="info-panel-box shield-theme">
             <div className="panel-icon-circle">
               <Shield size={22} />
@@ -304,7 +296,6 @@ export default function About() {
 
         <hr className="section-divider" />
 
-        {/* ================= 25. ABOUT — PROJECT FEATURES ================= */}
         <section>
           <div className="section-header-center">
             <span className="eyebrow-label">Application Capabilities</span>

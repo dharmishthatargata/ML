@@ -53,7 +53,6 @@
   --glass-border: rgba(30, 41, 59, 0.8);
 }
 
-/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -96,7 +95,6 @@ a:hover {
   color: var(--accent-hover);
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -115,13 +113,11 @@ a:hover {
   background: var(--text-muted);
 }
 
-/* Custom Selection */
 ::selection {
   background-color: rgba(var(--accent-rgb), 0.2);
   color: var(--text-primary);
 }
 
-/* Utility Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

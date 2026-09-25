@@ -59,7 +59,6 @@ export default function Contact() {
   return (
     <div className="contact-page animate-fade-in">
       <div className="container">
-        {/* HEADER */}
         <div className="page-header">
           <h1 className="page-title">Contact Us</h1>
           <p className="page-subtitle">
@@ -67,9 +66,7 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* TWO COLUMN GRID */}
         <div className="contact-grid">
-          {/* LEFT: INFO COLUMN */}
           <div className="contact-info-panel">
             <h2>Let's Connect</h2>
             <p className="contact-panel-desc">
@@ -112,7 +109,6 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* RIGHT: FORM COLUMN */}
           <div className="contact-form-panel">
             <h2>Send a Message</h2>
             
@@ -126,7 +122,6 @@ export default function Contact() {
             )}
 
             <form onSubmit={handleSubmit} className="contact-form">
-              {/* Name */}
               <div className="form-group">
                 <label htmlFor="fullName">Full Name *</label>
                 <input
@@ -141,7 +136,6 @@ export default function Contact() {
                 {errors.fullName && <span className="error-message">{errors.fullName}</span>}
               </div>
 
-              {/* Email */}
               <div className="form-group">
                 <label htmlFor="email">Email Address *</label>
                 <input
@@ -156,7 +150,6 @@ export default function Contact() {
                 {errors.email && <span className="error-message">{errors.email}</span>}
               </div>
 
-              {/* Subject */}
               <div className="form-group">
                 <label htmlFor="subject">Subject *</label>
                 <input
@@ -171,7 +164,6 @@ export default function Contact() {
                 {errors.subject && <span className="error-message">{errors.subject}</span>}
               </div>
 
-              {/* Message */}
               <div className="form-group">
                 <label htmlFor="message">Message *</label>
                 <textarea
@@ -186,7 +178,6 @@ export default function Contact() {
                 {errors.message && <span className="error-message">{errors.message}</span>}
               </div>
 
-              {/* Submit Button */}
               <button type="submit" className="btn-primary form-submit-btn">
                 <span>Send Message</span>
                 <Send size={16} />
