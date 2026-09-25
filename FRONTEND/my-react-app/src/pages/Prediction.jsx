@@ -164,7 +164,7 @@ export default function Prediction() {
     };
 
     try {
-      const response = await fetch("https://vehicle-fraud-api.onrender.com/predict", {
+      const response = await fetch("https://ml-x2nw.onrender.com/predict", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
