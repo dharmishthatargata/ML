@@ -3,25 +3,46 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import joblib
 import pandas as pd
+from pathlib import Path
 
 app = FastAPI()
 
+
+# =========================
+# CORS
+# =========================
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "http://127.0.0.1:5173"
+        "http://127.0.0.1:5173",
+        "http://localhost:5174",
+        "http://127.0.0.1:5174",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+
+# =========================
+# LOAD MODEL
+# =========================
 BASE_DIR = Path(__file__).resolve().parent.parent
-MODEL_PATH = BASE_DIR / "model" / "vehicle_fraud_pipeline.pkl"
+MODEL_PATH = BASE_DIR / "model" / "vehicle_fraud_final_model.pkl"
 
 model = joblib.load(MODEL_PATH)
 
+print("MODEL TYPE:", type(model))
+
+if hasattr(model, "feature_names_in_"):
+    print("MODEL FEATURES:")
+    print(model.feature_names_in__)
+
+
+# =========================
+# REQUEST MODEL
+# =========================
 class VehicleData(BaseModel):
     age_of_driver: int
     safety_rating: int
@@ -48,13 +69,22 @@ class VehicleData(BaseModel):
     form_defects: int
 
 
+# =========================
+# HOME
+# =========================
 @app.get("/")
 def home():
-    return {"message": "Vehicle Fraud Detection API is running"}
+    return {
+        "message": "Vehicle Fraud Detection API is running"
+    }
 
 
+# =========================
+# PREDICTION
+# =========================
 @app.post("/predict")
 def predict(data: VehicleData):
+
     input_data = pd.DataFrame([
         {
             "age_of_driver": data.age_of_driver,
@@ -76,21 +106,30 @@ def predict(data: VehicleData):
             "vehicle_price": data.vehicle_price,
             "total_claim": data.total_claim,
             "injury_claim": data.injury_claim,
-            "policy deductible": data.policy_deductible,
-            "annual premium": data.annual_premium,
-            "days open": data.days_open,
-            "form defects": data.form_defects
+            "policy_deductible": data.policy_deductible,
+            "annual_premium": data.annual_premium,
+            "days_open": data.days_open,
+            "form_defects": data.form_defects
         }
     ])
 
+    print("\nINPUT DATA:")
+    print(input_data)
+
     prediction = model.predict(input_data)[0]
+
+    print("PREDICTION:", prediction)
 
     if prediction == 1:
         result = "Fraud"
     else:
         result = "Not Fraud"
 
-    return {
+    response = {
         "prediction": int(prediction),
         "result": result
     }
+
+    print("RESPONSE:", response)
+
+    return response
