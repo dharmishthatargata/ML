@@ -106,19 +106,29 @@ def predict(data: VehicleData):
             "vehicle_price": data.vehicle_price,
             "total_claim": data.total_claim,
             "injury_claim": data.injury_claim,
-            "policy_deductible": data.policy_deductible,
-            "annual_premium": data.annual_premium,
-            "days_open": data.days_open,
-            "form_defects": data.form_defects
+
+            # IMPORTANT:
+            # These names must match the trained model
+            "policy deductible": data.policy_deductible,
+            "annual premium": data.annual_premium,
+            "days open": data.days_open,
+            "form defects": data.form_defects
         }
     ])
 
     print("\nINPUT DATA:")
     print(input_data)
 
+    print("\nINPUT COLUMNS:")
+    print(input_data.columns.tolist())
+
+    if hasattr(model, "feature_names_in_"):
+        print("\nMODEL EXPECTED COLUMNS:")
+        print(model.feature_names_in_.tolist())
+
     prediction = model.predict(input_data)[0]
 
-    print("PREDICTION:", prediction)
+    print("\nPREDICTION:", prediction)
 
     if prediction == 1:
         result = "Fraud"
@@ -130,6 +140,6 @@ def predict(data: VehicleData):
         "result": result
     }
 
-    print("RESPONSE:", response)
+    print("\nRESPONSE:", response)
 
     return response
