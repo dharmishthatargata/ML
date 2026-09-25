@@ -37,7 +37,7 @@ print("MODEL TYPE:", type(model))
 
 if hasattr(model, "feature_names_in_"):
     print("MODEL FEATURES:")
-    print(model.feature_names_in__)
+    print(model.feature_names_in_)
 
 
 # =========================
